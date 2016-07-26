@@ -36,6 +36,7 @@ when 'debian'
 
   package 'jenkins' do
     version node['jenkins']['master']['version']
+    ignore_failure true
   end
 
   template '/etc/default/jenkins' do
@@ -53,6 +54,7 @@ when 'rhel'
 
   package 'jenkins' do
     version node['jenkins']['master']['version']
+    ignore_failure true
   end
 
   # The package install creates the Jenkins user so now is the time to set the home
